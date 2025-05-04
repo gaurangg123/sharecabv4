@@ -7,11 +7,29 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export function TimePickerDemo() {
-  const [selectedTime, setSelectedTime] = React.useState<string>("12:00")
+interface TimePickerDemoProps {
+  value?: string
+  onChange?: (time: string) => void
+}
+
+export function TimePickerDemo({ value = "12:00", onChange }: TimePickerDemoProps) {
+  const [selectedTime, setSelectedTime] = React.useState<string>(value)
 
   const hours = Array.from({ length: 24 }, (_, i) => i)
   const minutes = ["00", "15", "30", "45"]
+
+  React.useEffect(() => {
+    if (value !== selectedTime) {
+      setSelectedTime(value)
+    }
+  }, [value])
+
+  const handleTimeChange = (newTime: string) => {
+    setSelectedTime(newTime)
+    if (onChange) {
+      onChange(newTime)
+    }
+  }
 
   return (
     <Popover>
@@ -42,7 +60,7 @@ export function TimePickerDemo() {
                         )}
                         onClick={() => {
                           const currentMinute = selectedTime.split(":")[1] || "00"
-                          setSelectedTime(`${hour.toString().padStart(2, "0")}:${currentMinute}`)
+                          handleTimeChange(`${hour.toString().padStart(2, "0")}:${currentMinute}`)
                         }}
                       >
                         {hour.toString().padStart(2, "0")}
@@ -67,7 +85,7 @@ export function TimePickerDemo() {
                         )}
                         onClick={() => {
                           const currentHour = selectedTime.split(":")[0] || "12"
-                          setSelectedTime(`${currentHour}:${minute}`)
+                          handleTimeChange(`${currentHour}:${minute}`)
                         }}
                       >
                         {minute}
@@ -87,12 +105,12 @@ export function TimePickerDemo() {
               const now = new Date()
               const hours = now.getHours().toString().padStart(2, "0")
               const minutes = Math.floor(now.getMinutes() / 15) * 15
-              setSelectedTime(`${hours}:${minutes.toString().padStart(2, "0")}`)
+              handleTimeChange(`${hours}:${minutes.toString().padStart(2, "0")}`)
             }}
           >
             Now
           </Button>
-          <Button size="sm" onClick={() => setSelectedTime("12:00")}>
+          <Button size="sm" onClick={() => handleTimeChange("12:00")}>
             Reset
           </Button>
         </div>

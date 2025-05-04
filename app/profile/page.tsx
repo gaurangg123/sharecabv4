@@ -26,7 +26,7 @@ export default function ProfilePage() {
           <div className="flex flex-col items-center gap-4 md:items-start">
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=120&width=120&text=JD"
+                src="/placeholder.svg?height=120&width=120&text=RS"
                 alt="Profile"
                 width={120}
                 height={120}
@@ -52,14 +52,14 @@ export default function ProfilePage() {
               </Button>
             </div>
             <div className="text-center md:text-left">
-              <h2 className="text-xl font-bold">John Doe</h2>
+              <h2 className="text-xl font-bold">Rahul Sharma</h2>
               <p className="text-sm text-muted-foreground">Premium Member</p>
             </div>
           </div>
 
           <div>
             <Tabs defaultValue="personal" className="w-full">
-              <TabsList className="grid w-full grid-cols-4 mb-8">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 mb-8">
                 <TabsTrigger value="personal">Personal</TabsTrigger>
                 <TabsTrigger value="payment">Payment</TabsTrigger>
                 <TabsTrigger value="preferences">Preferences</TabsTrigger>
@@ -76,20 +76,20 @@ export default function ProfilePage() {
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div className="space-y-2">
                         <Label htmlFor="first-name">First name</Label>
-                        <Input id="first-name" defaultValue="John" />
+                        <Input id="first-name" defaultValue="Rahul" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="last-name">Last name</Label>
-                        <Input id="last-name" defaultValue="Doe" />
+                        <Input id="last-name" defaultValue="Sharma" />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" defaultValue="john.doe@example.com" />
+                      <Input id="email" type="email" defaultValue="rahul.sharma@example.com" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone number</Label>
-                      <Input id="phone" type="tel" defaultValue="+1 (555) 123-4567" />
+                      <Input id="phone" type="tel" defaultValue="+91 98765 43210" />
                     </div>
                   </CardContent>
                   <CardFooter>
@@ -105,20 +105,20 @@ export default function ProfilePage() {
                   <CardContent className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="address">Street address</Label>
-                      <Input id="address" defaultValue="123 Main St" />
+                      <Input id="address" defaultValue="B-12, Vasant Kunj" />
                     </div>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                       <div className="space-y-2">
                         <Label htmlFor="city">City</Label>
-                        <Input id="city" defaultValue="San Francisco" />
+                        <Input id="city" defaultValue="New Delhi" />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="state">State</Label>
-                        <Input id="state" defaultValue="CA" />
+                        <Input id="state" defaultValue="Delhi" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="zip">ZIP code</Label>
-                        <Input id="zip" defaultValue="94105" />
+                        <Label htmlFor="zip">PIN code</Label>
+                        <Input id="zip" defaultValue="110070" />
                       </div>
                     </div>
                   </CardContent>
@@ -155,21 +155,21 @@ export default function ProfilePage() {
                           <p className="font-medium">Premium Plan - Monthly</p>
                           <p className="text-sm text-muted-foreground">Apr 1, 2025</p>
                         </div>
-                        <p className="font-medium">$29.99</p>
+                        <p className="font-medium">₹1,499</p>
                       </div>
                       <div className="flex items-center justify-between border-b pb-4">
                         <div>
                           <p className="font-medium">Premium Plan - Monthly</p>
                           <p className="text-sm text-muted-foreground">Mar 1, 2025</p>
                         </div>
-                        <p className="font-medium">$29.99</p>
+                        <p className="font-medium">₹1,499</p>
                       </div>
                       <div className="flex items-center justify-between border-b pb-4">
                         <div>
                           <p className="font-medium">Premium Plan - Monthly</p>
                           <p className="text-sm text-muted-foreground">Feb 1, 2025</p>
                         </div>
-                        <p className="font-medium">$29.99</p>
+                        <p className="font-medium">₹1,499</p>
                       </div>
                     </div>
                   </CardContent>
@@ -250,10 +250,10 @@ export default function ProfilePage() {
                       </div>
                       <select id="music" className="rounded-md border border-input bg-background px-3 py-1 text-sm">
                         <option>No preference</option>
-                        <option>Pop</option>
-                        <option>Rock</option>
-                        <option>Jazz</option>
+                        <option>Bollywood</option>
                         <option>Classical</option>
+                        <option>Punjabi</option>
+                        <option>Rock</option>
                         <option>No music</option>
                       </select>
                     </div>

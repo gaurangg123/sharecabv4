@@ -1,18 +1,27 @@
-import { Car, Clock, DollarSign, Bike, Truck } from "lucide-react"
+"use client"
+
+import { Car, Clock, Bike, Truck } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
+import { useState } from "react"
 
 export function RideOptions() {
+  const [selectedRide, setSelectedRide] = useState("auto")
+
+  const handleRideSelect = (value: string) => {
+    setSelectedRide(value)
+  }
+
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader className="pb-3">
         <h3 className="text-lg font-semibold">Available Rides</h3>
         <p className="text-sm text-muted-foreground">Select your preferred ride option</p>
       </CardHeader>
       <CardContent>
-        <RadioGroup defaultValue="auto" className="space-y-3">
+        <RadioGroup value={selectedRide} onValueChange={handleRideSelect} className="space-y-3">
           <div className="flex items-center space-x-2 rounded-lg border p-4 cursor-pointer hover:bg-muted/50">
             <RadioGroupItem value="bike" id="bike" />
             <Label htmlFor="bike" className="flex flex-1 cursor-pointer justify-between">
@@ -28,7 +37,6 @@ export function RideOptions() {
                       <span>2 min</span>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <DollarSign className="mr-1 h-3 w-3" />
                       <span>Lowest fare</span>
                     </div>
                   </div>
@@ -56,7 +64,6 @@ export function RideOptions() {
                       <span>3 min</span>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <DollarSign className="mr-1 h-3 w-3" />
                       <span>Affordable</span>
                     </div>
                   </div>
@@ -84,7 +91,6 @@ export function RideOptions() {
                       <span>4 min</span>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <DollarSign className="mr-1 h-3 w-3" />
                       <span>Standard</span>
                     </div>
                   </div>
@@ -112,7 +118,6 @@ export function RideOptions() {
                       <span>5 min</span>
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <DollarSign className="mr-1 h-3 w-3" />
                       <span>Premium</span>
                     </div>
                   </div>
@@ -126,7 +131,16 @@ export function RideOptions() {
           </div>
         </RadioGroup>
 
-        <Button className="w-full mt-6">Book Auto Rickshaw</Button>
+        <Button className="w-full mt-6">
+          Book{" "}
+          {selectedRide === "bike"
+            ? "Bike"
+            : selectedRide === "auto"
+              ? "Auto Rickshaw"
+              : selectedRide === "mini"
+                ? "Mini"
+                : "Sedan"}
+        </Button>
       </CardContent>
     </Card>
   )

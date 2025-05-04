@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/50">
       <div className="container px-4 md:px-6 py-8 md:py-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-          <div className="col-span-2 lg:col-span-2">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Car className="h-6 w-6 text-primary" />
               <span className="text-xl font-bold">ShareCab</span>

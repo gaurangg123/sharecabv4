@@ -37,7 +37,7 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="mx-auto lg:mx-0">
+            <div className="mx-auto lg:mx-0 mt-8 lg:mt-0">
               <Image
                 src="/placeholder.svg?height=400&width=600"
                 alt="Taxi service illustration"
@@ -61,7 +61,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
             <FeatureCard
               icon={<Shield className="h-10 w-10 text-primary" />}
               title="Safety First"
@@ -110,19 +110,19 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
             <TestimonialCard
               quote="ShareCab has completely transformed my daily commute. The subscription plan saves me money, and the drivers are always professional."
-              author="Sarah Johnson"
+              author="Priya Sharma"
               role="Daily Commuter"
               rating={5}
             />
             <TestimonialCard
               quote="As a business traveler, I appreciate the reliability and comfort of ShareCab. The app is intuitive and booking is seamless."
-              author="Michael Chen"
+              author="Vikram Mehta"
               role="Business Executive"
               rating={5}
             />
             <TestimonialCard
               quote="I've tried many ride-sharing services, but ShareCab stands out for its excellent customer service and clean vehicles."
-              author="Emily Rodriguez"
+              author="Ananya Patel"
               role="Weekend Traveler"
               rating={4}
             />
@@ -159,7 +159,7 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="mx-auto lg:mx-0 flex items-center justify-center">
+            <div className="mx-auto lg:mx-0 flex items-center justify-center mt-8 lg:mt-0">
               <Image
                 src="/placeholder.svg?height=400&width=300"
                 alt="ShareCab Mobile App"
