@@ -6,12 +6,18 @@ import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export function RideOptions() {
   const [selectedRide, setSelectedRide] = useState("auto")
+  const router = useRouter()
 
   const handleRideSelect = (value: string) => {
     setSelectedRide(value)
+  }
+
+  const handleBookRide = () => {
+    router.push("/ride-confirmation")
   }
 
   return (
@@ -131,7 +137,7 @@ export function RideOptions() {
           </div>
         </RadioGroup>
 
-        <Button className="w-full mt-6">
+        <Button className="w-full mt-6" onClick={handleBookRide}>
           Book{" "}
           {selectedRide === "bike"
             ? "Bike"
